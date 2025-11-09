@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D Chess</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>♟️ 3D Chess</h1>
+    <div class="panel">
+      <div class="turn" id="turn">White to move</div>
+      <button id="undo" class="btn" disabled>Undo</button>
+      <button id="newGame" class="btn">New Game</button>
+    </div>
+  </header>
+
+  <div id="err" class="err" hidden></div>
+
+  <main class="wrap">
+    <section class="board-wrap">
+      <div id="canvas-container"></div>
+    </section>
+
+    <aside class="side">
+      <h2>Moves</h2>
+      <ol id="moves" class="moves"></ol>
+
+      <div class="captured">
+        <h3>Captured</h3>
+        <div class="cap-row">
+          <span class="cap-label">White:</span>
+          <div id="capsByWhite" class="cap-bin"></div>
+        </div>
+        <div class="cap-row">
+          <span class="cap-label">Black:</span>
+          <div id="capsByBlack" class="cap-bin"></div>
+        </div>
+      </div>
+
+      <div class="tips">
+        <p>Click a piece to see legal moves (green). Click a capture square (red) to take.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    <span>3D Chess with Three.js</span>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
